@@ -24,15 +24,14 @@ if !exists('n3_actually')
   let n3_actually = 1
 endif
 
-
 syn keyword n3Verb              a
 syn match   n3Separator         "[][;,)(}{^!]"
 syn match   n3EndStatement      "\."
 syn match   n3Declaration       "@prefix\|@base"
 "syn match   n3LName             "\(:\?\)\@<=[a-zA-Z_][a-zA-Z0-9_]*"
-syn match   n3ClassName         "\(:\?\)\@<=[A-Z][a-zA-Z0-9_-]*"
-syn match   n3PropertyName      "\(:\?\)\@<=[a-z][a-zA-Z0-9_-]*"
-syn match   n3Prefix            "\([a-zA-Z_][a-zA-Z0-9_]*\)\?:"
+syn match   n3ClassName         "\(:\?\)\@<=[A-Z\u00C0-\u00D6\u00D8-\u00F6\u00F8-\u02FF\u0370-\u037D\u037F-\u1FFF\u200C-\u200D\u2070-\u218F\u2C00-\u2FEF\u3001-\uD7FF\uF900-\uFDCF\uFDF0-\uFFFD\U00010000-\U000EFFFF][a-zA-Z0-9_-\u00C0-\u00D6\u00D8-\u00F6\u00F8-\u02FF\u0370-\u037D\u037F-\u1FFF\u200C-\u200D\u2070-\u218F\u2C00-\u2FEF\u3001-\uD7FF\uF900-\uFDCF\uFDF0-\uFFFD\U00010000-\U000EFFFF]*"
+syn match   n3PropertyName      "\(:\?\)\@<=[a-z\u00C0-\u00D6\u00D8-\u00F6\u00F8-\u02FF\u0370-\u037D\u037F-\u1FFF\u200C-\u200D\u2070-\u218F\u2C00-\u2FEF\u3001-\uD7FF\uF900-\uFDCF\uFDF0-\uFFFD\U00010000-\U000EFFFF][a-zA-Z0-9_-\u00C0-\u00D6\u00D8-\u00F6\u00F8-\u02FF\u0370-\u037D\u037F-\u1FFF\u200C-\u200D\u2070-\u218F\u2C00-\u2FEF\u3001-\uD7FF\uF900-\uFDCF\uFDF0-\uFFFD\U00010000-\U000EFFFF]*"
+syn match   n3Prefix            "\([a-zA-Z_\u00C0-\u00D6\u00D8-\u00F6\u00F8-\u02FF\u0370-\u037D\u037F-\u1FFF\u200C-\u200D\u2070-\u218F\u2C00-\u2FEF\u3001-\uD7FF\uF900-\uFDCF\uFDF0-\uFFFD\U00010000-\U000EFFFF][a-zA-Z0-9_\u00C0-\u00D6\u00D8-\u00F6\u00F8-\u02FF\u0370-\u037D\u037F-\u1FFF\u200C-\u200D\u2070-\u218F\u2C00-\u2FEF\u3001-\uD7FF\uF900-\uFDCF\uFDF0-\uFFFD\U00010000-\U000EFFFF]*\)\?:"
 syn match   n3Comment           "#.*$" contains=n3Todo
 syn keyword n3Todo              TODO FIXME XXX contained
 
